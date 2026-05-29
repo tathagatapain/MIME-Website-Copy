@@ -1,0 +1,31 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import CafeApp from '~/components/islands/CafeApp.jsx';
+import '~/styles/global.css';
+
+const assetBase = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={`${assetBase}favicon.svg`} />
+    <title>Art-Teas-Tree Cafe — Kolkata adda, tea, theatre</title>
+    <meta
+      name="description"
+      content="A cinematic Kolkata cafe experience inspired by cha er dokan culture, adda, books, and the Mime Institute of Calcutta."
+    />
+    <meta name="theme-color" content="#3B2418" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <ViewTransitions />
+  </head>
+  <body>
+    <CafeApp client:load />
+  </body>
+</html>
